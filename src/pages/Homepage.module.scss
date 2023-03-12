@@ -1,0 +1,68 @@
+@import "../variables.scss";
+
+.wrapper {
+  background-image: url(../assets/home/background-home-mobile.jpg);
+  height: 100%;
+  position: absolute;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.inner-wrapper {
+  max-width: 75%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  font-family: var(--alt-font);
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.92rem;
+  letter-spacing: 2.7px;
+  text-align: center;
+  text-transform: uppercase;
+  margin-top: 11.2rem;
+  color: var(--primary-color);
+}
+
+.space {
+  font-family: var(--primary-font);
+  font-weight: 400;
+  font-size: 8rem;
+  line-height: 10rem;
+  margin: 1.6rem 0;
+  color: var(--white);
+}
+
+p {
+  color: var(--primary-color);
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+  text-align: center;
+}
+
+.explore {
+  font-weight: 400;
+  font-size: 2.5rem;
+  line-height: 2.292rem;
+  letter-spacing: 1.25px;
+  text-align: center;
+  color: var(--dark-font);
+
+  &-wrapper {
+    margin-top: 8.1rem;
+    width: 15rem;
+    height: 15rem;
+    border-radius: 50%;
+    background-color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
