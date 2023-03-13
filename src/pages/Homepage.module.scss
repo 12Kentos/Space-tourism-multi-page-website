@@ -1,21 +1,28 @@
 @import "../variables.scss";
 
-.wrapper {
+body {
   background-image: url(../assets/home/background-home-mobile.jpg);
-  height: 100%;
-  position: absolute;
+  height: 100vh;
+  width: 100vw;
   background-size: 100% 100%;
   background-repeat: no-repeat;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.inner-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.inner-wrapper {
+.text-wrapper {
   max-width: 75%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 h1 {
@@ -49,11 +56,12 @@ p {
 
 .explore {
   font-weight: 400;
-  font-size: 2.5rem;
+  font-size: 2rem;
   line-height: 2.292rem;
   letter-spacing: 1.25px;
   text-align: center;
-  color: var(--dark-font);
+  text-transform: uppercase;
+  color: var(--color-dark);
 
   &-wrapper {
     margin-top: 8.1rem;
@@ -64,5 +72,92 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+}
+
+@media (min-width: 48em) {
+  body {
+    background-image: url(../assets/home/background-home-tablet.jpg);
+  }
+
+  .text-wrapper {
+    max-width: 50%;
+  }
+
+  h1 {
+    font-size: 2rem;
+    line-height: 2.4rem;
+    letter-spacing: 3.38px;
+    margin-top: 20.2rem;
+  }
+
+  .space {
+    font-size: 15rem;
+    line-height: 15rem;
+    margin: 2.4rem 0;
+  }
+
+  p {
+    font-size: 1.6rem;
+    line-height: 2.8rem;
+  }
+
+  .explore {
+    font-size: 3.2rem;
+    line-height: 3.667rem;
+    letter-spacing: 2px;
+
+    &-wrapper {
+      margin-top: 15.6rem;
+      width: 24.2rem;
+      height: 24.2rem;
+    }
+  }
+}
+
+@media (min-width: 90em) {
+  body {
+    background-image: url(../assets/home/background-home-desktop.jpg);
+  }
+
+  .text-wrapper {
+    max-width: 43%;
+  }
+
+  .wrapper {
+    align-items: flex-end;
+  }
+
+  .inner-wrapper {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin: 0 16.5rem;
+    margin-bottom: 13.1rem;
+  }
+
+  h1 {
+    font-size: 2.8rem;
+    line-height: 3.36rem;
+    letter-spacing: 7.72px;
+    margin-top: 0;
+  }
+
+  .space {
+    line-height: 17.19rem;
+  }
+
+  p {
+    font-size: 1.8rem;
+    line-height: 3.2rem;
+    text-align: left;
+  }
+
+  .explore {
+    &-wrapper {
+      margin-top: 15.6rem;
+      width: 27.4rem;
+      height: 27.4rem;
+    }
   }
 }
