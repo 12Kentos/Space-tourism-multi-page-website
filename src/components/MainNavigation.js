@@ -3,19 +3,29 @@ import companyLogo from "../assets/shared/logo.svg";
 import hamburgerBtn from "../assets/shared/icon-hamburger.svg";
 import closeBtn from "../assets/shared/icon-close.svg";
 
+import { useState } from "react";
+
 const MainNavigation = () => {
+  const [isNavOpen, setIsNavOpen] = useState(false);
+
+  const toggleNav = () => {
+    setIsNavOpen(!isNavOpen);
+  };
+
+  const navClassList = isNavOpen ? styles.active : "";
+
   return (
     <header className={styles.wrapper}>
       <a>
         <img src={companyLogo} alt="Company Logo" />
       </a>
-      <button className={styles.hamburger}>
+      <button className={styles.hamburger} onClick={toggleNav}>
         <img src={hamburgerBtn} alt="A hamburger nav menu button" />
       </button>
-      <nav>
+      <nav className={navClassList}>
         <ul>
           <li className={styles["close-btn-li"]}>
-            <button className={styles.close}>
+            <button className={styles.close} onClick={toggleNav}>
               <img src={closeBtn} alt="A button that closes the nav bar" />
             </button>
           </li>
