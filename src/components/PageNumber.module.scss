@@ -1,0 +1,21 @@
+@import "../variables.scss";
+
+.number {
+  font-family: var(--alt-font);
+  font-size: 1.6rem;
+  line-height: 1.92rem;
+  letter-spacing: 2.7px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.253);
+  margin-right: 1.8rem;
+  text-transform: uppercase;
+
+  &-header {
+    font-weight: 400;
+    color: var(--white);
+
+    position: absolute;
+    top: 8.8rem;
+    left: 7.75rem;
+  }
+}

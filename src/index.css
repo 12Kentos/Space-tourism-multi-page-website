@@ -13,6 +13,4 @@ html {
 body {
   box-sizing: border-box;
   font-family: "Bellefair", serif;
-  height: 100vh;
-  position: relative;
 }

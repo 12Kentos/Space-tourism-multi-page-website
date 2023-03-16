@@ -1,18 +1,13 @@
 @import "../variables.scss";
 
-body {
-  background-image: url(../assets/home/background-home-mobile.jpg);
-  height: 100vh;
-  width: 100vw;
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-}
-
 .wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
+  background-image: url(../assets/home/background-home-mobile.jpg);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
 }
 
 .inner-wrapper {
@@ -25,7 +20,7 @@ body {
   max-width: 75%;
 }
 
-h1 {
+.title {
   font-family: var(--alt-font);
   font-size: 1.6rem;
   font-weight: 400;
@@ -46,7 +41,7 @@ h1 {
   color: var(--white);
 }
 
-p {
+.main-info {
   color: var(--primary-color);
   font-weight: 400;
   font-size: 1.5rem;
@@ -76,7 +71,7 @@ p {
 }
 
 @media (min-width: 48em) {
-  body {
+  .wrapper {
     background-image: url(../assets/home/background-home-tablet.jpg);
   }
 
@@ -84,7 +79,7 @@ p {
     max-width: 50%;
   }
 
-  h1 {
+  .title {
     font-size: 2rem;
     line-height: 2.4rem;
     letter-spacing: 3.38px;
@@ -97,7 +92,7 @@ p {
     margin: 2.4rem 0;
   }
 
-  p {
+  .main-info {
     font-size: 1.6rem;
     line-height: 2.8rem;
   }
@@ -116,16 +111,13 @@ p {
 }
 
 @media (min-width: 90em) {
-  body {
-    background-image: url(../assets/home/background-home-desktop.jpg);
-  }
-
   .text-wrapper {
-    max-width: 43%;
+    max-width: 37%;
   }
 
   .wrapper {
     align-items: flex-end;
+    background-image: url(../assets/home/background-home-desktop.jpg);
   }
 
   .inner-wrapper {
@@ -136,18 +128,19 @@ p {
     margin-bottom: 13.1rem;
   }
 
-  h1 {
+  .title {
     font-size: 2.8rem;
     line-height: 3.36rem;
-    letter-spacing: 7.72px;
+    letter-spacing: 4.72px;
     margin-top: 0;
+    text-align: left;
   }
 
   .space {
     line-height: 17.19rem;
   }
 
-  p {
+  .main-info {
     font-size: 1.8rem;
     line-height: 3.2rem;
     text-align: left;
