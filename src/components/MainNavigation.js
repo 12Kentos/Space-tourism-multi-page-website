@@ -10,9 +10,12 @@ const MainNavigation = () => {
 
   const toggleNav = () => {
     setIsNavOpen(!isNavOpen);
+    console.log("clicked");
   };
 
-  const navClassList = isNavOpen ? styles.active : "";
+  const navClassList = `${styles["nav-class-list"]} ${
+    isNavOpen ? styles.active : ""
+  }`;
 
   return (
     <header className={styles.wrapper}>
@@ -23,7 +26,7 @@ const MainNavigation = () => {
         <img src={hamburgerBtn} alt="A hamburger nav menu button" />
       </button>
       <nav className={navClassList}>
-        <ul>
+        <ul className={styles["ul-list"]}>
           <li className={styles["close-btn-li"]}>
             <button className={styles.close} onClick={toggleNav}>
               <img src={closeBtn} alt="A button that closes the nav bar" />
