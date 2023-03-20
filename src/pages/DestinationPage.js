@@ -4,45 +4,99 @@ import marsPic from "../assets/destination/image-mars.webp";
 import europaPic from "../assets/destination/image-europa.webp";
 import titanPic from "../assets/destination/image-titan.webp";
 
-import { useReducer } from "react";
+import { useState } from "react";
 
 const DestinationPage = () => {
+  const originalDestination = "Moon";
+  const originalParagraph =
+    "See our planet as you’ve never seen it before. A perfect relaxing trip away to help regain perspective and come back refreshed. While you’re there, take in some history by visiting the Luna 2 and Apollo 11 landing sites.";
+  const originalDistance = "384,400KM";
+  const originalTime = "3 Days";
+  const originalImg = moonPic;
+
+  const moonHandler = () => {
+    setDestination(originalDestination);
+    setParagraph(originalParagraph);
+    setDistance(originalDestination);
+    setTime(originalTime);
+    setImage(originalImg);
+  };
+
+  const marsHandler = () => {
+    setDestination("Mars");
+    setParagraph(
+      "Don’t forget to pack your hiking boots. You’ll need them to tackle Olympus Mons, the tallest planetary mountain in our solar system. It’s two and a half times the size of Everest!"
+    );
+    setDistance("225 Mil. Km");
+    setTime("9 Months");
+    setImage(marsPic);
+  };
+
+  const europaHandler = () => {
+    setDestination("Europa");
+    setParagraph(
+      "The smallest of the four Galilean moons orbiting Jupiter, Europa is a winter lover’s dream. With an icy surface, it’s perfect for a bit of ice skating, curling, hockey, or simple relaxation in your snug wintery cabin."
+    );
+    setDistance("628 Mil. Km");
+    setTime("3 Years");
+    setImage(europaPic);
+  };
+
+  const titanHandler = () => {
+    setDestination("Titan");
+    setParagraph(
+      "The only moon known to have a dense atmosphere other than Earth, Titan is a home away from home (just a few hundred degrees colder!). As a bonus, you get striking views of the Rings of Saturn."
+    );
+    setDistance("1.6 Bil. Km");
+    setTime("7 Years");
+    setImage(titanPic);
+  };
+
+  let [destination, setDestination] = useState(originalDestination);
+  let [paragraph, setParagraph] = useState(originalParagraph);
+  let [distance, setDistance] = useState(originalDistance);
+  let [time, setTime] = useState(originalTime);
+  let [image, setImage] = useState(originalImg);
+
   return (
     <>
       <div className={styles.wrapper}>
-        <img className={styles.img} src={moonPic} alt="Picture of the moon" />
+        <img className={styles.img} src={image} alt="Picture of the moon" />
         <div className={styles["info-wrapper"]}>
           <nav className={styles.nav}>
             <ul className={styles.ul}>
               <li>
-                <a className={styles.destination}>Moon</a>
+                <button className={styles.destination} onClick={moonHandler}>
+                  Moon
+                </button>
               </li>
               <li>
-                <a className={styles.destination}>Mars</a>
+                <button className={styles.destination} onClick={marsHandler}>
+                  Mars
+                </button>
               </li>
               <li>
-                <a className={styles.destination}>Europa</a>
+                <button className={styles.destination} onClick={europaHandler}>
+                  Europa
+                </button>
               </li>
               <li>
-                <a className={styles.destination}>Titan</a>
+                <button className={styles.destination} onClick={titanHandler}>
+                  Titan
+                </button>
               </li>
             </ul>
           </nav>
-          <h1 className={styles.h1}>Moon</h1>
-          <p className={styles["main-text"]}>
-            See our planet as you’ve never seen it before. A perfect relaxing
-            trip away to help regain perspective and come back refreshed. While
-            you’re there, take in some history by visiting the Luna 2 and Apollo
-            11 landing sites.
-          </p>
+          <h1 className={styles.h1}>{destination}</h1>
+          <p className={styles["main-text"]}>{paragraph}</p>
           <div className={styles["specs-wrapper"]}>
             <p className={styles["main-info"]}>
               Avg. Distance
-              <span className={styles.numbers}>384,400KM</span>
+              <span className={styles.numbers}>{distance}</span>
             </p>
             <p className={styles["main-info"]}>
               Est. Travel Time
-              <span className={styles.numbers}>3 Days</span>
+              <span className={styles.numbers}>{time}</span>
             </p>
           </div>
         </div>

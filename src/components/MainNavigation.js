@@ -17,8 +17,12 @@ const MainNavigation = () => {
     isNavOpen ? styles.active : ""
   }`;
 
+  const wrapperClassList = `${styles.wrapper} ${
+    isNavOpen ? styles.active : ""
+  }`;
+
   return (
-    <header className={styles.wrapper}>
+    <header className={wrapperClassList}>
       <a>
         <img src={companyLogo} alt="Company Logo" />
       </a>
