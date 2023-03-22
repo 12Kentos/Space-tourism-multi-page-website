@@ -61,7 +61,11 @@ const DestinationPage = () => {
   return (
     <>
       <div className={styles.wrapper}>
-        <img className={styles.img} src={image} alt="Picture of the moon" />
+        <img
+          className={styles.img}
+          src={image}
+          alt="Picture of the destination"
+        />
         <div className={styles["info-wrapper"]}>
           <nav className={styles.nav}>
             <ul className={styles.ul}>

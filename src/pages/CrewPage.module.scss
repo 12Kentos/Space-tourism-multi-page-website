@@ -1,0 +1,169 @@
+@import "../variables.scss";
+
+.wrapper {
+  background-image: url(../assets/crew/background-crew-mobile.jpg);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  flex-direction: column;
+}
+
+.img {
+  max-width: 50%;
+
+  &-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #383b4b;
+    max-width: 87.2%;
+    margin-bottom: 3.2rem;
+  }
+}
+
+.ul {
+  list-style: none;
+  display: flex;
+  gap: 1.6rem;
+}
+
+.button {
+  width: 1rem;
+  height: 1rem;
+  border: none;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+
+  &:hover,
+  &:active {
+    cursor: pointer;
+    background-color: var(--white);
+  }
+}
+
+.title {
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1.834rem;
+  text-transform: uppercase;
+  margin-top: 3.2rem;
+  margin-bottom: 0.8rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.person {
+  font-weight: 400;
+  font-size: 2.4rem;
+  line-height: 2.75rem;
+  text-transform: uppercase;
+  margin-bottom: 1.6rem;
+  color: var(--white);
+}
+
+.paragraph {
+  max-width: 32.7rem;
+  font-family: var(--alt-font);
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+  color: var(--primary-color);
+}
+
+.text-wrapper {
+  text-align: center;
+}
+
+@media (min-width: 40em) {
+  .wrapper {
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+    background-image: url(../assets/crew/background-crew-tablet.jpg);
+  }
+
+  .button {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  .img {
+    max-width: 70%;
+
+    &-wrapper {
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+  }
+
+  .ul {
+    margin: 4rem 0;
+  }
+
+  .title {
+    font-size: 2.4rem;
+    line-height: 2.75rem;
+  }
+
+  .person {
+    font-size: 4rem;
+    line-height: 4.584rem;
+  }
+
+  .paragraph {
+    max-width: 45.8rem;
+    font-size: 1.6rem;
+    line-height: 2.8rem;
+  }
+}
+
+@media (min-width: 62.5em) {
+  .wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr auto;
+    align-items: end;
+    background-image: url(../assets/crew/background-crew-desktop.jpg);
+  }
+
+  .img {
+    max-width: 100%;
+    &-wrapper {
+      grid-area: 1 / 2 / 3 / 3;
+    }
+  }
+
+  .ul {
+    margin: 0 0 9rem 0;
+    margin-left: 11.5%;
+  }
+
+  .title {
+    font-size: 3.2rem;
+    line-height: 3.667rem;
+  }
+
+  .person {
+    font-size: 5.6rem;
+    line-height: 6.418rem;
+  }
+
+  .paragraph {
+    font-size: 2.5rem;
+    line-height: 3.2rem;
+  }
+
+  .text-wrapper {
+    grid-area: 1 / 1 / 2 / 2;
+    justify-content: center;
+    text-align: left;
+    margin-left: 11.5%;
+    margin-bottom: 12rem;
+  }
+
+  .button {
+    width: 2rem;
+    height: 2rem;
+  }
+}
