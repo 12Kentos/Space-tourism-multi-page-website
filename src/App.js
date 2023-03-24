@@ -4,6 +4,7 @@ import PageNumber from "./components/PageNumber";
 import CrewPage from "./pages/CrewPage";
 import DestinationPage from "./pages/DestinationPage";
 import HomePage from "./pages/Homepage";
+import TechnologyPage from "./pages/TechnologyPage";
 
 function App() {
   return (
@@ -12,7 +13,8 @@ function App() {
       {/* <HomePage /> */}
       <PageNumber />
       {/* <DestinationPage /> */}
-      <CrewPage />
+      {/* <CrewPage /> */}
+      <TechnologyPage />
     </>
   );
 }
