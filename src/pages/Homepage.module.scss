@@ -59,6 +59,7 @@
   color: var(--color-dark);
 
   &-wrapper {
+    position: relative;
     margin-top: 8.1rem;
     width: 15rem;
     height: 15rem;
@@ -67,6 +68,18 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
+    &:hover {
+      cursor: pointer;
+      &::before {
+        content: "";
+        position: absolute;
+        width: 45rem;
+        height: 45rem;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+    }
   }
 }
 

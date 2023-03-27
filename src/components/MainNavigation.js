@@ -5,6 +5,8 @@ import closeBtn from "../assets/shared/icon-close.svg";
 
 import { useState } from "react";
 
+import { Link } from "react-router-dom";
+
 const MainNavigation = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
 
@@ -21,11 +23,17 @@ const MainNavigation = () => {
     isNavOpen ? styles.active : ""
   }`;
 
+  const [currentTab, setCurrentTab] = useState(0);
+
+  const currentTabHandler = (number) => {
+    setCurrentTab(number);
+  };
+
   return (
     <header className={wrapperClassList}>
-      <a>
+      <Link to="/" onClick={() => currentTabHandler(0)}>
         <img src={companyLogo} alt="Company Logo" />
-      </a>
+      </Link>
       <button className={styles.hamburger} onClick={toggleNav}>
         <img src={hamburgerBtn} alt="A hamburger nav menu button" />
       </button>
@@ -37,24 +45,56 @@ const MainNavigation = () => {
             </button>
           </li>
           <li>
-            <a className={styles["nav-link"]}>
+            <Link
+              to="/"
+              className={
+                currentTab === 0
+                  ? `${styles["nav-link"]} ${styles.current}`
+                  : styles["nav-link"]
+              }
+              onClick={() => currentTabHandler(0)}
+            >
               <span className={styles["nav-link-number"]}>00</span> Home
-            </a>
+            </Link>
           </li>
           <li>
-            <a className={styles["nav-link"]}>
+            <Link
+              to="/DestinationPage"
+              className={
+                currentTab === 1
+                  ? `${styles["nav-link"]} ${styles.current}`
+                  : styles["nav-link"]
+              }
+              onClick={() => currentTabHandler(1)}
+            >
               <span className={styles["nav-link-number"]}>01</span> Destination
-            </a>
+            </Link>
           </li>
           <li>
-            <a className={styles["nav-link"]}>
+            <Link
+              to="/CrewPage"
+              className={
+                currentTab === 2
+                  ? `${styles["nav-link"]} ${styles.current}`
+                  : styles["nav-link"]
+              }
+              onClick={() => currentTabHandler(2)}
+            >
               <span className={styles["nav-link-number"]}>02</span> Crew
-            </a>
+            </Link>
           </li>
           <li>
-            <a className={styles["nav-link"]}>
+            <Link
+              to="/TechnologyPage"
+              className={
+                currentTab === 3
+                  ? `${styles["nav-link"]} ${styles.current}`
+                  : styles["nav-link"]
+              }
+              onClick={() => currentTabHandler(3)}
+            >
               <span className={styles["nav-link-number"]}>03</span> Technology
-            </a>
+            </Link>
           </li>
         </ul>
       </nav>
