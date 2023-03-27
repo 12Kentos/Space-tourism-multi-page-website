@@ -13,8 +13,8 @@ function App() {
       {/* <HomePage /> */}
       <PageNumber />
       {/* <DestinationPage /> */}
-      {/* <CrewPage /> */}
-      <TechnologyPage />
+      <CrewPage />
+      {/* <TechnologyPage /> */}
     </>
   );
 }

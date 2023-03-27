@@ -16,6 +16,7 @@ const CrewPage = () => {
   let [paragraph, setParagraph] = useState(originalParagraph);
   let [title, setTitle] = useState(originalTitle);
   let [person, setPerson] = useState(originalPerson);
+  const [toggleCurrent, setToggleCurrent] = useState(1);
 
   const douglasHandler = () => {
     setImage(douglas);
@@ -24,6 +25,7 @@ const CrewPage = () => {
     );
     setTitle("Commander");
     setPerson("Douglas Hurley");
+    setToggleCurrent(1);
   };
 
   const markHandler = () => {
@@ -33,6 +35,7 @@ const CrewPage = () => {
     );
     setTitle("Mission Specialst");
     setPerson("Mark Shuttleworth");
+    setToggleCurrent(2);
   };
 
   const victorHandler = () => {
@@ -42,6 +45,7 @@ const CrewPage = () => {
     );
     setTitle("Pilot");
     setPerson("Victor Glover");
+    setToggleCurrent(3);
   };
 
   const anoushehHandler = () => {
@@ -51,6 +55,7 @@ const CrewPage = () => {
     );
     setTitle("Flight Engineer");
     setPerson("Anousheh Ansari");
+    setToggleCurrent(4);
   };
 
   return (
@@ -65,17 +70,42 @@ const CrewPage = () => {
         </div>
         <ul className={styles.ul}>
           <li>
-            <button className={styles.button} onClick={douglasHandler}></button>
-          </li>
-          <li>
-            <button className={styles.button} onClick={markHandler}></button>
-          </li>
-          <li>
-            <button className={styles.button} onClick={victorHandler}></button>
+            <button
+              className={
+                toggleCurrent === 1
+                  ? `${styles.button} ${styles.current}`
+                  : styles.button
+              }
+              onClick={douglasHandler}
+            ></button>
           </li>
           <li>
             <button
-              className={styles.button}
+              className={
+                toggleCurrent === 2
+                  ? `${styles.button} ${styles.current}`
+                  : styles.button
+              }
+              onClick={markHandler}
+            ></button>
+          </li>
+          <li>
+            <button
+              className={
+                toggleCurrent === 3
+                  ? `${styles.button} ${styles.current}`
+                  : styles.button
+              }
+              onClick={victorHandler}
+            ></button>
+          </li>
+          <li>
+            <button
+              className={
+                toggleCurrent === 4
+                  ? `${styles.button} ${styles.current}`
+                  : styles.button
+              }
               onClick={anoushehHandler}
             ></button>
           </li>

@@ -13,6 +13,7 @@ const DestinationPage = () => {
   const originalDistance = "384,400KM";
   const originalTime = "3 Days";
   const originalImg = moonPic;
+  const [toggleCurrent, setToggleCurrent] = useState(1);
 
   const moonHandler = () => {
     setDestination(originalDestination);
@@ -20,6 +21,7 @@ const DestinationPage = () => {
     setDistance(originalDestination);
     setTime(originalTime);
     setImage(originalImg);
+    setToggleCurrent(1);
   };
 
   const marsHandler = () => {
@@ -30,6 +32,7 @@ const DestinationPage = () => {
     setDistance("225 Mil. Km");
     setTime("9 Months");
     setImage(marsPic);
+    setToggleCurrent(2);
   };
 
   const europaHandler = () => {
@@ -40,6 +43,7 @@ const DestinationPage = () => {
     setDistance("628 Mil. Km");
     setTime("3 Years");
     setImage(europaPic);
+    setToggleCurrent(3);
   };
 
   const titanHandler = () => {
@@ -50,6 +54,7 @@ const DestinationPage = () => {
     setDistance("1.6 Bil. Km");
     setTime("7 Years");
     setImage(titanPic);
+    setToggleCurrent(4);
   };
 
   let [destination, setDestination] = useState(originalDestination);
@@ -70,22 +75,50 @@ const DestinationPage = () => {
           <nav className={styles.nav}>
             <ul className={styles.ul}>
               <li>
-                <button className={styles.destination} onClick={moonHandler}>
+                <button
+                  className={
+                    toggleCurrent === 1
+                      ? `${styles.destination} ${styles.current}`
+                      : styles.destination
+                  }
+                  onClick={moonHandler}
+                >
                   Moon
                 </button>
               </li>
               <li>
-                <button className={styles.destination} onClick={marsHandler}>
+                <button
+                  className={
+                    toggleCurrent === 2
+                      ? `${styles.destination} ${styles.current}`
+                      : styles.destination
+                  }
+                  onClick={marsHandler}
+                >
                   Mars
                 </button>
               </li>
               <li>
-                <button className={styles.destination} onClick={europaHandler}>
+                <button
+                  className={
+                    toggleCurrent === 3
+                      ? `${styles.destination} ${styles.current}`
+                      : styles.destination
+                  }
+                  onClick={europaHandler}
+                >
                   Europa
                 </button>
               </li>
               <li>
-                <button className={styles.destination} onClick={titanHandler}>
+                <button
+                  className={
+                    toggleCurrent === 4
+                      ? `${styles.destination} ${styles.current}`
+                      : styles.destination
+                  }
+                  onClick={titanHandler}
+                >
                   Titan
                 </button>
               </li>
