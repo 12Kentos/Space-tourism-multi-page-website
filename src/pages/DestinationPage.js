@@ -5,6 +5,7 @@ import europaPic from "../assets/destination/image-europa.webp";
 import titanPic from "../assets/destination/image-titan.webp";
 
 import { useState } from "react";
+import PageNumber from "../components/PageNumber";
 
 const DestinationPage = () => {
   const originalDestination = "Moon";
@@ -65,6 +66,7 @@ const DestinationPage = () => {
 
   return (
     <>
+      <PageNumber number={"01"} text={"Pick your destination"} />
       <div className={styles.wrapper}>
         <img
           className={styles.img}

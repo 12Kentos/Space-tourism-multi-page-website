@@ -1,6 +1,8 @@
+import { Link } from "react-router-dom";
 import styles from "./Homepage.module.scss";
 
 const HomePage = () => {
+
   return (
     <div className={styles.wrapper}>
       <div className={styles["inner-wrapper"]}>
@@ -16,7 +18,9 @@ const HomePage = () => {
           </p>
         </div>
         <div className={styles["explore-wrapper"]}>
-          <p className={styles.explore}>Explore</p>
+          <p className={styles.explore}>
+            Explore
+          </p>
         </div>
       </div>
     </div>

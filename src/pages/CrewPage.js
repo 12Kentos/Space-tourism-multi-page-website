@@ -4,6 +4,7 @@ import mark from "../assets/crew/image-mark-shuttleworth.webp";
 import victor from "../assets/crew/image-victor-glover.webp";
 import anousheh from "../assets/crew/image-anousheh-ansari.webp";
 import { useState } from "react";
+import PageNumber from "../components/PageNumber";
 
 const CrewPage = () => {
   const originalImg = douglas;
@@ -60,6 +61,7 @@ const CrewPage = () => {
 
   return (
     <>
+      <PageNumber number={"02"} text={"Pick your crew"} />
       <div className={styles.wrapper}>
         <div className={styles["img-wrapper"]}>
           <img

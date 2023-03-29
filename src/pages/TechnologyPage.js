@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styles from "./TechnologyPage.module.scss";
+import PageNumber from "../components/PageNumber";
 
 const TechnologyPage = () => {
   const originalParagraph =
@@ -40,6 +41,7 @@ const TechnologyPage = () => {
 
   return (
     <>
+      <PageNumber number={"03"} text={"Space Launch 101"} />
       <div className={styles.wrapper}>
         <div className={imgClasses}></div>
         <ul className={styles.ul}>
